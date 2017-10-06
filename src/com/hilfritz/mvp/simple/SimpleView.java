@@ -1,6 +1,6 @@
-package com.company.simple;
+package com.hilfritz.mvp.simple;
 
-import com.company.LogUtil;
+import com.hilfritz.mvp.LogUtil;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,8 @@ import java.util.ArrayList;
  * Created by herdmacbook1 on 29/6/17.
  */
 public class SimpleView implements SimpleViewInterface {
-    SimplePresenter presenter;
+    SimplePresenter<SimpleViewInterface> presenter;
+
     public static final String TAG = "SimpleView";
 
     public SimpleView() {
@@ -31,7 +32,7 @@ public class SimpleView implements SimpleViewInterface {
     }
 
     @Override
-    public void init(SimplePresenter presenter) {
+    public void init(SimplePresenter<SimpleViewInterface> presenter) {
         this.presenter = presenter;
     }
 

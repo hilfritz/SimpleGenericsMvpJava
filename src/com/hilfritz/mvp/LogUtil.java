@@ -1,4 +1,4 @@
-package com.company;
+package com.hilfritz.mvp;
 
 /**
  * Created by herdmacbook1 on 30/6/17.

@@ -1,15 +1,17 @@
-package com.company;
+package com.hilfritz.mvp;
 
-import com.company.simple.SimplePresenter;
-import com.company.simple.SimpleView;
+
+import com.hilfritz.mvp.simple.SimplePresenter;
+import com.hilfritz.mvp.simple.SimpleView;
+import com.hilfritz.mvp.simple.SimpleViewInterface;
 
 public class Main {
 
     public static void main(String[] args) {
         //INITIALIZE VIEW
-        SimpleView simpleView = new SimpleView();
+        SimpleViewInterface simpleView = new SimpleView();
         //INITIALIZE THE PRESENTER
-        SimplePresenter<SimpleView> simplePresenter = new SimplePresenter<>(simpleView);
+        SimplePresenter<SimpleViewInterface> simplePresenter = new SimplePresenter<>(simpleView);
         //SET THE VIEW'S PRESENTER
         simpleView.init(simplePresenter);
 

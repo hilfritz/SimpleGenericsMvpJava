@@ -1,8 +1,7 @@
-package com.company.simple;
+package com.hilfritz.mvp.simple;
 
-import com.company.LogUtil;
-import com.company.base.BasePresenterInterface;
-import com.company.base.BaseViewInterface;
+import com.hilfritz.mvp.LogUtil;
+import com.hilfritz.mvp.base.BasePresenterInterface;
 
 import java.util.ArrayList;
 import java.util.Arrays;

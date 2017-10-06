@@ -1,9 +1,9 @@
-package com.company.base;
+package com.hilfritz.mvp.base;
 
 /**
  * Created by herdmacbook1 on 30/6/17.
  */
-public interface BasePresenterInterface<V extends BaseViewInterface> {
+public interface BasePresenterInterface {
     void init();
     void populate();
     void destroy();
