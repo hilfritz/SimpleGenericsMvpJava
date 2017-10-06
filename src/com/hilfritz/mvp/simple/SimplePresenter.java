@@ -11,7 +11,7 @@ import java.util.Arrays;
  * shortcut to implementing class: cmd+alt+b - https://stackoverflow.com/questions/5051766/intellij-idea-jump-from-interface-to-implementing-class-in-java
  * error 1: https://stackoverflow.com/questions/23688702/cannot-start-compilation-the-output-path-is-not-specified-for-module
  */
-public class SimplePresenter<V extends SimpleViewInterface> implements BasePresenterInterface
+public class SimplePresenter<V extends SimpleViewInterface> implements SimpleViewInterface,BasePresenterInterface
 {
     private static final String TAG = "presenter";
     private V view;
@@ -53,4 +53,41 @@ public class SimplePresenter<V extends SimpleViewInterface> implements BasePrese
         LogUtil.log(TAG, "getSampleData(): retrieving data");
         return new ArrayList<>(Arrays.asList("LIST ITEM A", "LIST ITEM B", "LIST ITEM C","LIST ITEM D"));
     }
+
+	@Override
+	public void init(SimplePresenter<SimpleViewInterface> presenter) {
+		// no need to handle
+		
+	}
+
+	@Override
+	public void showList(ArrayList<String> list) {
+		getView().showList(list);
+	}
+
+	@Override
+	public void onRefreshClick() {
+		LogUtil.log(TAG, "onRefreshClick(): refresh click");
+		
+		
+	}
+
+	@Override
+	public void showLoading() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void hideLoading() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initializeViews() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

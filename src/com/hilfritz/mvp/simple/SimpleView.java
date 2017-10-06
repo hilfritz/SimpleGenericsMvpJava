@@ -1,15 +1,15 @@
 package com.hilfritz.mvp.simple;
 
 import com.hilfritz.mvp.LogUtil;
+import com.hilfritz.mvp.base.BaseViewInterface;
 
 import java.util.ArrayList;
 
 /**
  * Created by herdmacbook1 on 29/6/17.
  */
-public class SimpleView implements SimpleViewInterface {
+public class SimpleView implements SimpleViewInterface,BaseViewInterface {
     SimplePresenter<SimpleViewInterface> presenter;
-
     public static final String TAG = "SimpleView";
 
     public SimpleView() {
