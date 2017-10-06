@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * Created by herdmacbook1 on 29/6/17.
  */
 public class SimpleView implements SimpleViewInterface {
+    SimplePresenter presenter;
     public static final String TAG = "SimpleView";
 
     public SimpleView() {
@@ -29,6 +30,10 @@ public class SimpleView implements SimpleViewInterface {
         LogUtil.log(TAG, "showLoading(): hiding loading");
     }
 
+    @Override
+    public void init(SimplePresenter presenter) {
+        this.presenter = presenter;
+    }
 
     @Override
     public void showList(ArrayList<String> list) {
@@ -38,5 +43,10 @@ public class SimpleView implements SimpleViewInterface {
             LogUtil.log(TAG, "showLoading(): list item: "+message);
         }
         LogUtil.log(TAG, "showLoading(): showing list end");
+    }
+
+    @Override
+    public void onRefreshClick() {
+        presenter.populate();
     }
 }

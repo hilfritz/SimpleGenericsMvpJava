@@ -9,6 +9,8 @@ import java.util.Arrays;
 
 /**
  * Created by herdmacbook1 on 29/6/17.
+ * shortcut to implementing class: cmd+alt+b - https://stackoverflow.com/questions/5051766/intellij-idea-jump-from-interface-to-implementing-class-in-java
+ * error 1: https://stackoverflow.com/questions/23688702/cannot-start-compilation-the-output-path-is-not-specified-for-module
  */
 public class SimplePresenter<V extends SimpleViewInterface> implements BasePresenterInterface
 {
@@ -17,7 +19,7 @@ public class SimplePresenter<V extends SimpleViewInterface> implements BasePrese
 
     public SimplePresenter(V view) {
         LogUtil.log(TAG, "constructor(): ");
-        this.view = view;
+        setView(view);
         init();
     }
 
@@ -42,6 +44,10 @@ public class SimplePresenter<V extends SimpleViewInterface> implements BasePrese
 
     public V getView() {
         return view;
+    }
+
+    public void setView(V view){
+        this.view = view;
     }
 
     public ArrayList<String> getSampleData(){
